@@ -1,0 +1,19 @@
+name: change on push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  clone:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: SSH INTO machine
+        run: |
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > key.pem
+          chmod 600 key.pem
+          ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@13.60.24.243 " git clone https://github.com/vivekrqwat/monorepotestdepoly"
