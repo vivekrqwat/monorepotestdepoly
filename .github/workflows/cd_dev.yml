@@ -16,4 +16,4 @@ jobs:
         run: |
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > key.pem
           chmod 600 key.pem
-          ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@13.60.24.243 " git clone https://github.com/vivekrqwat/monorepotestdepoly"
+          ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@13.62.101.4 " git clone https://github.com/vivekrqwat/monorepotestdepoly"
