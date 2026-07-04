@@ -4,7 +4,7 @@ import { connectDB } from '@repo/db';
 const app = express();
 
 connectDB().catch((err) => console.error('DB connect error:', err));
-
+console.log('DB connection initiated');
 app.get('/', (req, res) => res.send('OK'));
 
 app.listen(3000, () => {
